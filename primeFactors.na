@@ -1,0 +1,106 @@
+"Enter a number:Error! No prime factors!"
+inc 12
+
+
+
+lit 0
+lit 15
+lit 16
+out 2
+
+la 0 32
+la 0 40
+in 0
+
+lv 0 32
+lit 1
+rel 1
+tjmp .error
+
+
+
+
+la 0 36
+lit 1
+sto
+
+.while
+lv 0 32
+lit 1
+rel 2
+tjmp .end
+
+
+.notprime
+
+la 0 36
+lv 0 36
+lit 1
+add
+sto
+
+la 0 40
+lit 2
+sto
+
+.for
+lv 0 40
+lv 0 36
+lit 2
+div
+rel 1
+fjmp .prime
+
+lv 0 36
+lv 0 40
+mod
+lit 0
+rel 2
+tjmp .notprime
+
+la 0 40
+lv 0 40
+lit 1
+add
+sto
+jmp .for
+
+
+
+.prime
+
+.print
+lv 0 32
+lv 0 36
+mod
+lit 0
+rel 2
+fjmp .while
+
+lv 0 36
+lit 1
+out 0
+lit 5
+lit 1
+lit 1
+out 2
+
+la 0 32
+lv 0 32
+lv 0 36
+div
+sto
+
+jmp .print
+
+
+
+
+.error
+lit 15
+lit 24
+lit 24
+out 2
+
+.end
+halt
