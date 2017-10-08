@@ -1,0 +1,42 @@
+"Enter a number:"
+inc 8
+
+lit 0
+lit 14
+lit 15
+out 2
+
+la 0 32
+la 0 36
+in 0
+
+la 0 36
+lit 1
+sto
+
+.loop
+
+lv 0 36
+lit 1
+out 0
+out 3
+
+la 0 36
+lv 0 36
+lit 1
+add
+sto
+
+lv 0 32
+lv 0 36
+rel 2
+tjmp .end
+jmp .loop
+.end
+
+lv 0 32
+lit 1
+out 0
+out 3
+
+halt

@@ -1,0 +1,47 @@
+"Max Points:Your Points:You got:%"
+inc 12
+
+lit 0
+lit 11
+lit 12
+out 2
+
+la 0 32
+la 0 40
+in 0
+
+lit 11
+lit 12
+lit 13
+out 2
+
+la 0 36
+la 0 40
+in 0
+
+la 0 36
+lv 0 36
+lit 100
+mul
+sto
+
+la 0 40
+lv 0 36
+lv 0 32
+div
+sto
+
+lit 23
+lit 8
+lit 9
+out 2
+
+lv 0 40
+lit 1
+out 0
+
+lit 31
+lit 1
+lit 1
+out 2
+halt
